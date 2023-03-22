@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Employee List</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <h2>Employees</h2>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Emp ID</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Department</th>
+    <th>Occupation</th>
+    <th>Hired Date</th>
+  </tr>
+
+  <% foundEmployees.forEach((employee) =>{ %>
+    <tr>
+      <th></th>
+      <th></th>
+      <td><%= employee.id %></td>
+      <td><%= employee.name %></td>
+      <td><%= employee.dob %></td>
+      <td><%= employee.department %></td>
+      <td><%= employee.occupation %></td>
+      <td><%= employee.hiredDate %></td>
+    </tr>
+  <% }) %>
+
+</table>
+<button onclick="location.href = '/';" id="myButton" class="float-left submit-button" >New</button>
+  </body>
+</html>
