@@ -17,10 +17,10 @@ mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.onxirkl.mongo
   const employeeSchema = {
   id : Number,
   name : String,
-  dob : Date,
+  dob : String,
   department : String,
   occupation : String,
-  hiredDate : Date
+  hiredDate : String
 };
 
 const Employee = mongoose.model("Employee", employeeSchema);
@@ -55,6 +55,12 @@ app.get("/employees", async (req, res) => {
     res.render("employees", {
       foundEmployees: foundEmployees
   });
+});
+
+app.post("/delete", async (req, res) => {
+  await Employee.findByIdAndRemove(req.body.employee);
+  console.log("Employee successfully deleted from the DB");
+  res.redirect("/employees");
 });
 
   app.listen(3000, () => {

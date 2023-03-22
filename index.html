@@ -12,10 +12,21 @@
       <input type="text" name="employeeName" value="" placeholder=""> <br>
       <label for="">DOB: </label>
       <input type="date" name="dob" value="" placeholder=""> <br>
-      <label for="">Department: </label>
-      <input type="text" name="department" value=""> <br>
-      <label for="">Occupation: </label>
-      <input type="text" name="occupation" value=""> <br>
+      <label for="department">Department: </label>
+      <select name="department" id="department">
+  <option value="IT" selected>IT</option>
+  <option value="HR">HR</option>
+  <option value="Finance">Finance</option>
+  <option value="Sales">Sales</option>
+</select> <br>
+      <label for="occupation">Occupation: </label>
+
+      <select name="occupation" id="occupation">
+  <option value="Manager" selected>Manager</option>
+  <option value="Programmer">Programmer</option>
+  <option value="Accountant">Accountant</option>
+  <option value="Sales Representative">Sales Representative</option>
+</select> <br>
       <label for="">Hired Date: </label>
       <input type="date" name="hiredDate" value=""> <br>
       <button type="submit" name="submit">New</button>
